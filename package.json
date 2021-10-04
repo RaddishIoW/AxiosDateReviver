@@ -7,6 +7,12 @@
   "author": "Adam Radestock <raddishiow@gmail.com>",
   "license": "Unlicense",
   "private": false,
+  "keywords": [
+    "axois",
+    "date",
+    "json",
+    "transformer"
+  ],
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.32.0",
     "axios": "^0.22.0",
