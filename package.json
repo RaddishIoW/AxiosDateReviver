@@ -14,8 +14,10 @@
     "eslint-config-standard": "^16.0.3",
     "eslint-config-standard-with-typescript": "^21.0.1",
     "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-jsonc": "^1.7.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-yml": "^0.10.1",
     "standard": "^16.0.3",
     "typescript": "^4.4.3"
   },

@@ -5,5 +5,67 @@ env:
 extends:
   - standard
   - standard-with-typescript
+  - "plugin:jsonc/recommended-with-jsonc"
+  - "plugin:yml/standard"
+parser: "@typescript-eslint/parser"
 parserOptions:
-  project: "./tsconfig.json"
+  project: ./tsconfig.json
+  sourceType: module
+overrides:
+  - files:
+      - "*.yaml"
+      - "*.yml"
+    parser: yaml-eslint-parser
+  - files:
+      - "*.json"
+      - "*.json5"
+      - "*.jsonc"
+    parser: jsonc-eslint-parser
+rules:
+  no-void:
+    - error
+    - allowAsStatement: true
+  indent: 0
+  "@typescript-eslint/indent":
+    - error
+    - 2
+    - SwitchCase: 1
+      offsetTernaryExpressions: true
+  linebreak-style:
+    - error
+    - unix
+  quotes:
+    - error
+    - single
+  semi:
+    - error
+    - never
+  operator-linebreak:
+    - error
+    - after
+    - overrides:
+        "?": ignore
+        ":": ignore
+  no-use-before-define: 0
+  "@typescript-eslint/no-use-before-define":
+    - error
+  jsonc/indent:
+    - error
+    - 2
+  typescript-eslint/no-non-null-assertion:
+    - off
+settings:
+  import/resolver:
+    node:
+      extensions:
+        - .js
+        - .jsx
+        - .ts
+        - .tsx
+    typescript:
+      alwaysTryTypes: true
+      project: "*/tsconfig.json"
+  import/parsers:
+    "@typescript-eslint/parser":
+      - .ts
+      - .tsx
