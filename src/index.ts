@@ -14,7 +14,7 @@ function isValidDate (date: unknown): boolean {
  * @returns {unknown | Date} the value, simply passed through if not a date, or a Date
  */
 function dateReviver (key: string, value: unknown): unknown | Date {
-  if ((key.includes('date') || key.includes('time')) && typeof value === 'string' && dateFormat.test(value)) {
+  if ((key.includes('date') || key.includes('time') || key.includes('Date') || key.includes('Time')) && typeof value === 'string' && dateFormat.test(value)) {
     const potentialDate = new Date(value)
     if (isValidDate(potentialDate)) {
       return potentialDate
